@@ -1,0 +1,55 @@
+@import '~normalize.css';
+@import './fonts.scss';
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+  top: 0px !important;
+}
+
+html,
+body,
+body > div,
+body > div > div {
+  height: 100%;
+}
+
+*,
+body {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
+}
+
+body {
+  background-color: #2d313d;
+  color: #fff;
+  font-family: 'Raleway';
+  font-weight: normal;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+  outline: none;
+}

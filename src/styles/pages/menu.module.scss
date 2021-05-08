@@ -1,0 +1,46 @@
+.wrapper {
+  @include page_wrapper;
+}
+
+.main {
+  @include container;
+}
+
+.list {
+  padding-left: 0px;
+  &__item {
+    list-style-type: none;
+    font-size: 70px;
+    line-height: 140%;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    & + & {
+      margin-top: 20px;
+    }
+  }
+}
+
+.arrowIcon {
+  margin-left: 36px;
+}
+
+@include lg {
+  .list {
+    &__item {
+      font-size: 60px;
+    }
+  }
+}
+
+@include sm {
+  .list__item {
+    font-size: 40px;
+  }
+}
+
+@include xs {
+  .list__item {
+    font-size: 28px;
+  }
+}

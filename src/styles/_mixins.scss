@@ -1,0 +1,116 @@
+@mixin container {
+  max-width: 966px;
+  width: 100%;
+  margin: 0 auto;
+  @include lg {
+    max-width: 966px;
+  }
+  @include md {
+    max-width: calc(100vw - 200px);
+  }
+  @media screen and (max-width: 1000px) {
+    max-width: calc(100vw - 100px);
+  }
+  @include sm {
+    max-width: calc(100vw - 100px);
+  }
+  @include xs {
+    max-width: calc(100vw - 20px);
+  }
+}
+
+@mixin page_wrapper {
+  @include flex_between;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+@mixin flex_between {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex_end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@mixin text {
+  font-size: 16px;
+  line-height: 140%;
+  @include sm {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+@mixin h1 {
+  font-size: 40px;
+  font-family: Montserrat;
+  line-height: 52px;
+  @include md {
+    font-size: 40px;
+  }
+  @include sm {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+@mixin sub-title {
+  font-size: 20px;
+  line-height: 26px;
+  font-family: Montserrat;
+  font-weight: bold;
+}
+
+@mixin red-dot {
+  height: 14px;
+  width: 14px;
+  margin-right: 16px;
+  background-color: $red;
+  border-radius: 50%;
+}
+
+@mixin darken_block {
+  background-color: $dark-grey;
+  border-radius: 5px;
+  box-shadow: (-5px 4px 15px rgba(0, 0, 0, 0.25));
+}
+
+/* Large tablets + small desktop screens */
+@mixin lg {
+  @media (max-width: 1366px) {
+    @content;
+  }
+}
+/* tablets */
+@mixin md {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+/* phones */
+@mixin sm {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media screen and (max-width: 415px) {
+    @content;
+  }
+}
+
+@mixin xss {
+  @media screen and (max-width: 335px) {
+    @content;
+  }
+}

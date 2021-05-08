@@ -1,0 +1,144 @@
+.header {
+  @include container;
+  @include flex_between;
+  margin-top: 50px;
+  &__main {
+    @include flex_between;
+    align-items: center;
+    width: 50%;
+    max-width: 580px;
+  }
+
+  &__logo {
+    cursor: pointer;
+  }
+
+  &__bold {
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+  }
+
+  &__phone {
+    font-family: 'Montserrat';
+    cursor: pointer;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo,
+  &__bold,
+  &__phone {
+    transition: 0.2s;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__lang,
+  &__icon {
+    transition: 0.2s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__lang {
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  &__icon {
+    margin-left: 37px;
+    cursor: pointer;
+  }
+  &__cross {
+    cursor: pointer;
+    margin-left: 37px;
+  }
+
+  p {
+    @include text;
+  }
+}
+.plus {
+  font-weight: bold;
+  font-size: 30px;
+  margin-left: 6px;
+  position: absolute;
+  right: -25px;
+  top: -8px;
+}
+
+@include lg {
+}
+
+@include md {
+  .header {
+    &__main {
+      width: 60%;
+    }
+  }
+}
+
+@include sm {
+  .hand {
+    display: block;
+  }
+
+  .header {
+    &__bold,
+    &__lang {
+      display: none;
+    }
+    &__icon {
+      width: 23px;
+      height: 17px;
+    }
+    &__cross {
+      width: 23px;
+    }
+    &__logo {
+      width: 60px;
+    }
+    &__phone {
+      font-size: 14px;
+    }
+  }
+  .mouse {
+    display: none;
+  }
+  .scrollPage {
+    bottom: 30px;
+    svg {
+      height: auto;
+    }
+  }
+}
+
+@include xs {
+  .header {
+    margin-top: 25px;
+    &__main {
+      width: 70%;
+    }
+    &__icon {
+      margin-left: unset;
+    }
+  }
+}
+
+@include xss {
+  .wrapper {
+    display: block;
+  }
+  .header {
+    margin-top: 20px;
+    &__main {
+      width: 80%;
+    }
+  }
+}

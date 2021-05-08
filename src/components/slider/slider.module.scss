@@ -1,0 +1,18 @@
+.item {
+  height: 14px;
+  width: 14px;
+  margin-right: 10px;
+}
+.dot {
+  background-color: $grey-lighten-1;
+  border-radius: 50%;
+  height: 6px;
+  width: 6px;
+  margin-top: 10px;
+}
+
+@include md {
+  .arrows {
+    display: none;
+  }
+}

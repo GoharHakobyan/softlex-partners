@@ -1,0 +1,91 @@
+.flex {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.button {
+  @include flex_center;
+  @include text;
+
+  min-width: 324px;
+  height: 55px;
+  border: 1px dashed #ffffff;
+  background-color: transparent;
+  color: #fff;
+  font-weight: 500;
+}
+
+.list {
+  @include flex_between;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-left: 45px;
+  &__item {
+    animation: opacity 0.8s linear;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+}
+
+.ext {
+  @include text;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.fileName {
+  @include text;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cross {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@include md {
+  .button {
+    border-color: $red;
+  }
+}
+
+@include sm {
+  .flex {
+    width: 100%;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  .list {
+    margin-top: 20px;
+    flex-direction: column;
+    margin: 0;
+    &__item {
+      &:first-child {
+        margin-top: 25px;
+      }
+      & + & {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .button {
+    width: 100%;
+    border: 1px solid $red;
+  }
+}

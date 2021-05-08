@@ -1,0 +1,29 @@
+.container {
+  position: relative;
+  margin-bottom: 65px;
+}
+.label {
+  position: absolute;
+  bottom: 15px;
+  transition: all 0.2s linear;
+  color: $grey;
+  @include text;
+}
+
+.input {
+  background: none !important;
+  border: none;
+  min-height: 30px;
+  border-bottom: 1px solid $grey;
+  width: 100%;
+  color: white;
+  &__novalidate {
+    border-bottom: 1px solid red;
+  }
+}
+
+@include sm {
+  .container {
+    margin-bottom: 55px;
+  }
+}

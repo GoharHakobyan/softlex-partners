@@ -1,0 +1,264 @@
+.card {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  align-self: center;
+  justify-content: center;
+
+  &__info {
+    margin-top: 50px;
+    margin-right: -30px;
+    max-width: 45%;
+  }
+
+  &__flex {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    opacity: 0;
+  }
+
+  &__subtitle {
+    @include text;
+    font-weight: bold;
+    margin-top: -2px;
+  }
+
+  &__dot {
+    width: 14px;
+    height: 14px;
+    background-color: $red;
+    border-radius: 50%;
+    margin-right: 15px;
+    opacity: 0;
+  }
+
+  &__title {
+    font-size: 40px;
+    width: 100%;
+    opacity: 0;
+
+    /* To set dynamic title max-width to different card not using javascript inline styles */
+    &_1 {
+      max-width: 459px;
+    }
+    &_2 {
+      max-width: 480px;
+    }
+  }
+
+  &__hightlight {
+    background-color: $red;
+  }
+
+  &__text {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 100%;
+    font-weight: 500;
+    line-height: 170%;
+    font-size: 16px;
+
+    color: #e0e0e0;
+    &_1 {
+      max-width: 406px;
+    }
+    &_2 {
+      max-width: 406px;
+    }
+    &_3 {
+      max-width: 420px;
+    }
+  }
+
+  &__btn {
+    width: 251px;
+    border: 1px solid #fff;
+    height: 55px;
+    background-color: transparent;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    cursor: pointer;
+    @include flex_center;
+  }
+
+  &__pic {
+    margin-right: 100px;
+    // opacity: 0;
+    // height: fit-content;
+  }
+  svg {
+    width: 525px;
+    height: 525px;
+  }
+}
+
+@include lg {
+  .card {
+    &__title_2 {
+      max-width: unset;
+    }
+    &__info {
+      margin-right: unset;
+      width: 50%;
+      max-width: 50%;
+    }
+    &__pic {
+      margin-right: 45px;
+      margin-left: unset;
+    }
+    svg {
+      max-width: 450px;
+      min-width: unset;
+      min-height: 430px;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .card {
+    svg {
+      max-width: 400px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .card {
+    &__title {
+      font-size: 30px;
+      &_1 {
+        width: 320px;
+      }
+    }
+    &__text {
+      font-size: 15px;
+    }
+
+    svg {
+      max-width: 252px;
+      margin-bottom: 15px;
+      margin-left: 70px;
+      margin-top: -50px;
+      margin-right: 30px;
+      height: fit-content;
+      flex: 1;
+    }
+  }
+}
+
+@include md {
+  .card {
+    &__pic {
+      margin-right: 0;
+    }
+  }
+}
+
+@include sm {
+  .card {
+    flex-direction: column;
+    align-items: center;
+    justify-content: unset;
+    &__info {
+      margin-top: unset;
+      text-align: center;
+      width: 100%;
+      max-width: unset;
+      padding: 0 17px;
+    }
+    &__btn {
+      margin: 0 auto;
+      font-weight: bold;
+      font-size: 14px;
+      border-color: $red;
+    }
+    &__flex {
+      justify-content: center;
+      margin-bottom: 7px;
+    }
+    &__dot {
+      display: none;
+    }
+    &__subtitle {
+      background-color: $red;
+      font-size: 14px;
+      padding: 2px 8px;
+      font-weight: 500;
+    }
+    &__hightlight {
+      background-color: unset;
+      color: $red;
+      font-weight: 900;
+    }
+    &__title {
+      font-size: 20px;
+      font-weight: 900;
+      margin: 0 auto;
+      &_1 {
+        width: unset;
+        max-width: 235px;
+      }
+      &_2,
+      &_4 {
+        max-width: 250px;
+      }
+      &_3 {
+        max-width: 237px;
+      }
+    }
+    &__text {
+      font-size: 14px;
+      margin-top: 15px;
+      margin: 15px auto 30px;
+      &_3 {
+        max-width: unset;
+        margin-bottom: 20px;
+      }
+    }
+    svg {
+      max-height: 200px;
+      min-height: unset;
+      height: fit-content;
+      margin: unset;
+      margin-bottom: 15px;
+      overflow-y: hidden;
+    }
+  }
+}
+
+@include xs {
+  .card {
+    margin-top: 27px;
+    &__title {
+      font-size: 18px;
+      line-height: 23px;
+      &_1 {
+        max-width: 204px;
+      }
+    }
+
+    &__text {
+      margin: 10px auto 15px auto;
+      font-size: 12px;
+      line-height: 18px;
+      &_2 {
+        max-width: 218px;
+      }
+    }
+    svg {
+      max-height: 150px;
+    }
+  }
+}
+
+@include xss {
+  .card {
+    margin-top: 30px;
+    svg {
+      max-height: 130px;
+    }
+  }
+}

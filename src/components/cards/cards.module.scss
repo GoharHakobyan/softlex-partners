@@ -1,0 +1,94 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5%;
+  &__dot {
+    width: 6px;
+    height: 6px;
+    background-color: #828282;
+    border-radius: 50%;
+  }
+  * + * {
+    margin-top: 30px;
+  }
+}
+
+.main {
+  @include container;
+  margin-top: 10px;
+  @include md {
+    margin-top: 60px;
+  }
+}
+
+.wrapper {
+  @media (min-width: 1500px) {
+    margin-top: 100px !important;
+  }
+  @include page_wrapper;
+}
+
+.hand {
+  display: none;
+}
+
+.scrollPage {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  svg {
+    height: 130px;
+  }
+}
+
+@include lg {
+  .hand {
+    display: block;
+  }
+  .mouse {
+    display: none;
+  }
+}
+
+@include sm {
+  .nav {
+    left: 12px;
+    * + * {
+      margin-top: 20px;
+    }
+    &__dot {
+      width: 3px;
+      height: 3px;
+    }
+    &__icon {
+      height: 10px;
+      width: 10px;
+    }
+  }
+  .mouse {
+    display: none;
+  }
+  .scrollPage {
+    bottom: 30px;
+    svg {
+      height: auto;
+    }
+  }
+}
+
+@include xs {
+  .wrapper {
+    display: block;
+  }
+  .hand {
+    height: 18px;
+    width: 16px;
+  }
+  .scrollPage {
+    bottom: 15px;
+  }
+}

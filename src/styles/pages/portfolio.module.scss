@@ -1,0 +1,317 @@
+.container {
+  @include container;
+  margin-bottom: 110px;
+  @include sm {
+    margin-bottom: 40px;
+  }
+}
+
+.goBack {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  margin-top: 45px;
+  cursor: pointer;
+  padding: 0;
+
+  &__text {
+    color: $grey;
+    @include text;
+    margin-left: 15px;
+  }
+  @include md {
+    margin-top: 75px;
+  }
+  @include sm {
+    margin-top: 40px;
+  }
+}
+
+.dot {
+  @include red-dot;
+}
+.subtitle {
+  font-weight: bold;
+}
+
+.projects {
+  @include flex_between;
+  margin-top: 50px;
+  flex-direction: column;
+  @include md {
+    margin-top: 90px;
+  }
+  @include sm {
+    margin-top: 37px;
+  }
+
+  &__info {
+    margin-right: 50px;
+    flex-direction: column;
+    max-width: 900px;
+  }
+
+  &__flex {
+    display: flex;
+    margin-bottom: 55px;
+    @include md {
+      margin-bottom: 45px;
+    }
+    @include sm {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    @include h1;
+    letter-spacing: -5%;
+    @include sm {
+      margin-bottom: 20px;
+      font-weight: 900;
+    }
+  }
+
+  &__text {
+    line-height: 150%;
+    font-weight: 500;
+    max-width: 490px;
+    @include text;
+    margin-bottom: 75px;
+    &_grey {
+      color: #828282;
+    }
+    @include sm {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+    @include md {
+      justify-content: flex-start;
+    }
+    @include sm {
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    list-style-type: none;
+    padding-bottom: 10px;
+    border-bottom: 4px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-right: 50px;
+    text-align: center;
+    &:hover {
+      border-bottom: 4px solid $red;
+    }
+    @include md {
+      margin-bottom: 20px;
+    }
+    @include sm {
+      border: 1px solid #e0e0e0;
+      padding: 5px 15px 9px 15px;
+      margin-right: 10px;
+      margin-bottom: 15px;
+      flex-grow: 1;
+      &:hover {
+        background-color: $red;
+        border: 1px solid $red;
+      }
+    }
+  }
+  &__container {
+    display: grid;
+    row-gap: 35px;
+    column-gap: 20px;
+    margin: 0 auto;
+    margin-bottom: 35px;
+    width: 100%;
+    @include md {
+      gap: 20px;
+    }
+    @include sm {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__example {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 100px;
+    max-width: 1200px;
+
+    @include md {
+      padding-left: 58px;
+      justify-content: space-between;
+    }
+    @include sm {
+      min-width: 300px;
+      max-height: 187px;
+      justify-content: space-around;
+      align-items: flex-start;
+    }
+
+    p {
+      max-width: 320px;
+      line-height: 150%;
+      @include sm {
+        font-size: 12px;
+        margin-bottom: 18px;
+        max-width: 150px;
+      }
+    }
+    h2 {
+      margin-top: 15px;
+      margin-bottom: 30px;
+      font-size: 38px;
+      @include md {
+        font-size: 20px;
+        font-weight: 900;
+      }
+      @include sm {
+        margin-bottom: 15px;
+      }
+    }
+    h4 {
+      font-size: 16px;
+      font-weight: 500;
+      @include md {
+        font-weight: 700;
+      }
+      @include sm {
+        font-size: 12px;
+      }
+    }
+  }
+  &__1 {
+    background: lightskyblue;
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+  &__2 {
+    background: lightskyblue;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  &__3 {
+    background: #f16e6e;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  &__4 {
+    background: $grey;
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+  }
+
+  &__1,
+  &__4 {
+    height: 540px;
+    @include md {
+      height: 480px;
+      justify-content: space-around;
+      padding-left: 58px;
+    }
+    @include sm {
+      padding: 35px 30px;
+    }
+  }
+  &__2,
+  &__3 {
+    height: 480px;
+    max-width: 100%;
+    @include md {
+      max-height: 410px;
+      width: 0.5fr;
+      padding: 30px 30px 30px 55px;
+    }
+    @include sm {
+      max-height: 187px;
+      padding: 35px 30px;
+    }
+    h2 {
+      max-width: 215px;
+    }
+    p {
+      max-width: 255px;
+      @include md {
+        max-width: 300px;
+      }
+      @include sm {
+        max-width: 150px;
+      }
+    }
+    h4 {
+      @include md {
+        align-self: flex-end;
+      }
+      @include sm {
+        align-self: flex-start;
+      }
+    }
+  }
+
+  &__pagination {
+    @include flex_end;
+    align-items: center;
+    @include xs {
+      justify-content: space-between;
+    }
+  }
+
+  &__activePage {
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    margin-left: 18px;
+    margin-right: 10px;
+    @include xss {
+      margin-left: 7px;
+      margin-right: 7px;
+    }
+  }
+
+  &__numberOfPages {
+    display: inline-block;
+    color: $grey;
+    margin-left: 9px;
+    margin-right: 11px;
+    @include xss {
+      margin-left: 7px;
+      margin-right: 7px;
+    }
+  }
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      width: 60px;
+      border: 1px solid #c4c4c4;
+      background-color: #e5e5e5;
+      padding: 13px 25px;
+      cursor: pointer;
+
+      @include xss {
+        padding: 12px 22px;
+        width: 55px;
+      }
+    }
+  }
+
+  &__button_next {
+    transform: rotate(-180deg);
+  }
+}
